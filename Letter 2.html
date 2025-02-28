@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Letter 2</title>
+    <style>
+        body {
+            background: #1a0033;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Luminari', f;
+            font-style: italic;
+        }
+
+        .rain-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .rain-drop {
+            position: absolute;
+            background-color: #e6e6fa;
+            width: 2px;
+            height: 20px;
+            top: -20px;
+            animation: rain linear infinite;
+        }
+
+        @keyframes rain {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .message-container {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            display: flex;
+            align-items: center;
+        }
+
+        .flower-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 400px;
+            margin: 0 10px;
+        }
+
+        .flower {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            margin: 20px 0;
+            animation: sway 5s ease-in-out infinite alternate;
+        }
+
+        .flower.left {
+            transform-origin: bottom right;
+        }
+
+        .flower.right {
+            transform-origin: bottom left;
+        }
+
+        @keyframes sway {
+            0% {
+                transform: rotate(-5deg);
+            }
+            100% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .petal {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #d8bfd8;
+            border-radius: 15px 0;
+            transform-origin: bottom right;
+        }
+
+        .petal:nth-child(1) {
+            transform: rotate(0deg);
+            background: #dda0dd; /* Plum */
+        }
+        .petal:nth-child(2) {
+            transform: rotate(45deg);
+            background: #da70d6; /* Orchid */
+        }
+        .petal:nth-child(3) {
+            transform: rotate(90deg);
+            background: #ba55d3; /* Medium Orchid */
+        }
+        .petal:nth-child(4) {
+            transform: rotate(135deg);
+            background: #9370db; /* Medium Purple */
+        }
+        .petal:nth-child(5) {
+            transform: rotate(180deg);
+            background: #8a2be2; /* Blue Violet */
+        }
+        .petal:nth-child(6) {
+            transform: rotate(225deg);
+            background: #9400d3; /* Dark Violet */
+        }
+        .petal:nth-child(7) {
+            transform: rotate(270deg);
+            background: #9932cc; /* Dark Orchid */
+        }
+        .petal:nth-child(8) {
+            transform: rotate(315deg);
+            background: #d8bfd8; /* Thistle */
+        }
+
+        .flower-center {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ffdf00;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .stem {
+            position: absolute;
+            width: 3px;
+            height: 50px;
+            background: #228B22;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        .message {
+            color: #e6e6fa;
+            text-align: center;
+            max-width: 400px;
+            line-height: 1.6;
+            padding: 20px;
+            border: 2px solid #9370db;
+            border-radius: 10px;
+            background: rgba(75, 0, 130, 0.3);
+            font-size: 12px;
+            margin: 10px;
+            box-shadow: 0 0 15px rgba(147, 112, 219, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="rain-container" id="rainContainer">
+        <!-- Rain drops will be added by JavaScript -->
+    </div>
+    
+    <div class="message-container">
+        <div class="flower-container">
+            <div class="flower left" style="animation-delay: 0.5s;">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="flower-center"></div>
+                <div class="stem"></div>
+            </div>
+            <div class="flower left" style="animation-delay: 1.2s;">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="flower-center"></div>
+                <div class="stem"></div>
+            </div>
+            <div class="flower left" style="animation-delay: 0.8s;">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="flower-center"></div>
+                <div class="stem"></div>
+            </div>
+        </div>
+
+        <div class="message">
+            In ancient times, the color purple was of luxury<br>
+            coming from the Murex Snail located in every<br>
+            tropical sea from Africa, Asia, and the Americas.<br>
+            Such a dye is created with intensity and patience.<br>
+            It takes over 12,000 snails to make 1 gram of Tyrian Purple dye.<br>
+            Hence why the color represents honor, royalty, and expression of dedication to one's craft.<br><br>
+            
+            In human anatomy, the color appears when one is bruised<br>
+            after sustaining an injury due to a damaged blood vessel<br>
+            with fresh red blood mixing with oxygen-depleted blue<br>
+            due to hemoglobin breaking down into biliverdin and showing itself as such.<br>
+            Sharing in its passion from fashion, purple appears when the body is healing itself through turomoil and fortitude.<br>
+            To witness its transformation is of beauty and worth marveling.<br><br>
+            
+            The mixture of red and blue also represents a connection between physical energy and calm of mind.<br>
+            It's presentation represents a body of strength and mental peace.<br>
+            Witnessing this in its full glory shows itself in a beautiful life sweet as lavender dreams and vibrant as violet rays.<br>
+            For someone to love such a color is one who is filled with harmony, compassion, and tranquility.<br>
+            To have my world painted in such a color is a masterpiece worthy of never putting it down and to be cherished forever.<br>
+        </div>
+
+        <div class="flower-container">
+            <div class="flower right" style="animation-delay: 1s;">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="flower-center"></div>
+                <div class="stem"></div>
+            </div>
+            <div class="flower right" style="animation-delay: 0.3s;">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="flower-center"></div>
+                <div class="stem"></div>
+            </div>
+            <div class="flower right" style="animation-delay: 1.5s;">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="flower-center"></div>
+                <div class="stem"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create and position raindrops
+        function createRain() {
+            const container = document.getElementById('rainContainer');
+            const containerWidth = container.offsetWidth;
+            
+            // Number of raindrops
+            const dropCount = 100;
+            
+            for (let i = 0; i < dropCount; i++) {
+                // Create a raindrop element
+                const drop = document.createElement('div');
+                drop.classList.add('rain-drop');
+                
+                // Set random horizontal position
+                const posX = Math.floor(Math.random() * containerWidth);
+                drop.style.left = posX + 'px';
+                
+                // Random animation duration between 0.7 and 1.7 seconds
+                const duration = 0.7 + Math.random() * 1;
+                drop.style.animationDuration = duration + 's';
+                
+                // Random animation delay
+                const delay = Math.random() * 2;
+                drop.style.animationDelay = delay + 's';
+                
+                // Random opacity
+                drop.style.opacity = 0.1 + Math.random() * 0.8;
+                
+                // Add to container
+                container.appendChild(drop);
+            }
+        }
+        
+        // Run rain animation when page loads
+        window.addEventListener('load', createRain);
+        
+        // Also try to run it immediately to ensure it works
+        createRain();
+    </script>
+</body>
+</html>
